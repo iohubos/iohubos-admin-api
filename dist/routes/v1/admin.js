@@ -25,7 +25,7 @@ router.post("/reboot/:seconds", (_req, res) => __awaiter(void 0, void 0, void 0,
         // enable commands
         yield (0, promises_1.writeFile)("/proc/sys/kernel/sysrq", Buffer.from("1"));
         // sync filesystem
-        yield (0, promises_1.writeFile)("/proc/sysrq-trigger", Buffer.from("b"));
+        yield (0, promises_1.writeFile)("/proc/sysrq-trigger", Buffer.from("s"));
         setTimeout(() => {
             (function reboot() {
                 return __awaiter(this, void 0, void 0, function* () {
