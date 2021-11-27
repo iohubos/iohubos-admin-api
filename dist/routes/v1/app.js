@@ -70,7 +70,7 @@ router.get("/", (_req, res) => __awaiter(void 0, void 0, void 0, function* () {
     }
     catch (error) {
         console.log(error);
-        res.status(404).json({ error: "cannot load the applications" });
+        res.status(400).json({ error: "cannot load the applications" });
     }
 }));
 // get app info
@@ -82,7 +82,7 @@ router.get("/:app", checkAppName, (req, res) => __awaiter(void 0, void 0, void 0
     }
     catch (error) {
         console.log(error);
-        res.status(404).json({ error: "cannot load the application" });
+        res.status(400).json({ error: "cannot load the application" });
     }
 }));
 // get app status
@@ -93,7 +93,7 @@ router.get("/:app/status", checkAppName, (req, res) => __awaiter(void 0, void 0,
     }
     catch (error) {
         console.log(error);
-        res.status(404).json({ error: "cannot load the application" });
+        res.status(400).json({ error: "cannot load the application" });
     }
 }));
 // get app compose
@@ -104,7 +104,7 @@ router.get("/:app/compose", checkAppName, (req, res) => __awaiter(void 0, void 0
     }
     catch (error) {
         console.log(error);
-        res.status(404).json({ error: "cannot load the application" });
+        res.status(400).json({ error: "cannot load the application" });
     }
 }));
 // enable app
@@ -117,7 +117,7 @@ router.post("/:app/enable", checkAppName, (req, res) => __awaiter(void 0, void 0
     }
     catch (error) {
         console.log(error);
-        res.status(404).json({ error: "cannot enable the application" });
+        res.status(400).json({ error: "cannot enable the application" });
     }
 }));
 // disable app
@@ -130,7 +130,7 @@ router.post("/:app/disable", checkAppName, (req, res) => __awaiter(void 0, void 
     }
     catch (error) {
         console.log(error);
-        res.status(404).json({ error: "cannot disable the application" });
+        res.status(400).json({ error: "cannot disable the application" });
     }
 }));
 // deploy app
@@ -163,11 +163,11 @@ router.post("/:app/deploy", checkAppName, (req, res) => __awaiter(void 0, void 0
                 startSh += `docker-compose -f ${dockerComposePath} up -d\n`;
                 yield (0, promises_1.writeFile)(getStartName(rootDockerFolder, req.params.app), buffer_1.Buffer.from(startSh), { mode: 0o755 });
             }
-            res.sendStatus(201);
+            res.status(201).send("Deployed");
         }
         catch (error) {
             console.log(error);
-            res.status(500).json({ error: "cannot save the application" });
+            res.status(400).json({ error: "cannot save the application" });
         }
     }
     catch (error) {
