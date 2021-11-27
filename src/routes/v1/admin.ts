@@ -15,7 +15,7 @@ router.post("/reboot/:seconds", async (_req: Request, res: Response) => {
         // enable commands
         await writeFile("/proc/sys/kernel/sysrq", Buffer.from("1"));
         // sync filesystem
-        await writeFile("/proc/sysrq-trigger", Buffer.from("b"));
+        await writeFile("/proc/sysrq-trigger", Buffer.from("s"));
 
         setTimeout(() => {
             (async function reboot() {
