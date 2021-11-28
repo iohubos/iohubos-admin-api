@@ -5,7 +5,7 @@ version: 2.1
 executors:
     docker-publisher:
         environment:
-            IMAGE_NAME: ezvpn/iohubos-admin-api
+            IMAGE_NAME: iohubos/iohubos-admin-api
         docker:
             - image: circleci/buildpack-deps:stretch
 jobs:
@@ -72,7 +72,7 @@ workflows:
                           only: master
             - publish-latest:
                   context:
-                      - dockerhub-ezvpn
+                      - dockerhub-iohubos
                   requires:
                       - build
                   filters:
@@ -88,7 +88,7 @@ workflows:
                           ignore: /.*/
             - publish-tag:
                   context:
-                      - dockerhub-ezvpn
+                      - dockerhub-iohubos
                   requires:
                       - build
                   filters:
