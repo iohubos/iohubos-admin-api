@@ -47,7 +47,7 @@ docker run \
     -v /iohub/docker/apps:/mnt \
     -e ROOT_DOCKER_FOLDER=/mnt \
     -e API_TOKEN="<my secure token>" \
-    ezvpn/iohubos-admin-api
+    iohubos/iohubos-admin-api
 ```
 
 ## License
