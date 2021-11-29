@@ -8,6 +8,7 @@ executors:
             IMAGE_NAME: iohubos/iohubos-admin-api
         docker:
             - image: circleci/buildpack-deps:stretch
+
 jobs:
     build:
         executor: docker-publisher
