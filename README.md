@@ -14,7 +14,7 @@ Through the admin api you can:
 
 ## HTTP API endpoints
 
-Swagger API documentation is available [here](https://app.swaggerhub.com/apis-docs/iohubos/iohubos-admin-api/1.0.0).
+Swagger API documentation is available [here](https://app.swaggerhub.com/apis-docs/iohubos/iohubos-admin-api).
 
 ### Authorization
 
