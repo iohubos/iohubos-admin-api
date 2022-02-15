@@ -65,12 +65,12 @@ workflows:
         jobs:
             - node/test:
                   version: 14.17.6
-    build-master:
+    build-main:
         jobs:
             - build:
                   filters:
                       branches:
-                          only: master
+                          only: main
             - publish-latest:
                   context:
                       - dockerhub-iohubos
@@ -78,7 +78,7 @@ workflows:
                       - build
                   filters:
                       branches:
-                          only: master
+                          only: main
     build-tags:
         jobs:
             - build:

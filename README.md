@@ -1,7 +1,7 @@
 # Project IOhubOS Admin API
 
 [![License](https://img.shields.io/github/license/iohubos/iohubos-admin-api.svg)](LICENSE)
-[![CircleCI Build Status](https://circleci.com/gh/iohubos/iohubos-admin-api/tree/master.svg?style=shield)](https://circleci.com/gh/iohubos/iohubos-admin-api/tree/master)
+[![CircleCI Build Status](https://circleci.com/gh/iohubos/iohubos-admin-api/tree/main.svg?style=shield)](https://circleci.com/gh/iohubos/iohubos-admin-api/tree/main)
 
 Admin API for IOhubOS instances.
 
